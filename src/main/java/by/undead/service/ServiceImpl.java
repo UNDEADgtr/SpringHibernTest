@@ -35,7 +35,7 @@ public class ServiceImpl implements IService {
     public Book getBook(Long id) {
         Book instance = null;
         try {
-            bookDao.read(id);
+            instance = bookDao.read(id);
         }   catch (HibernateException ex){
 
         }

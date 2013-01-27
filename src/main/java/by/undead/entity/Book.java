@@ -1,5 +1,10 @@
 package by.undead.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Dzmitry
@@ -7,12 +12,16 @@ package by.undead.entity;
  * Time: 15:32
  * To change this template use File | Settings | File Templates.
  */
+@Entity
 public class Book {
-
+    @Id
+    @GeneratedValue
     private Long id;
 
+    @Column
     private String title;
 
+    @Column
     private String Author;
 
     public Book() {

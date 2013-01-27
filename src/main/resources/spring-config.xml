@@ -31,9 +31,9 @@
             <ref bean="dataSource"/>
         </property>
 
-        <property name="namingStrategy">
-            <bean class="by.undead.util.BookNamingStrategy"/>
-        </property>
+        <!--<property name="namingStrategy">-->
+            <!--<bean class="by.undead.util.BookNamingStrategy"/>-->
+        <!--</property>-->
 
         <property name="hibernateProperties">
             <props>

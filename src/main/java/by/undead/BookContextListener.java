@@ -31,7 +31,7 @@ public class BookContextListener implements ServletContextListener {
      * @see ServletContextListener#contextInitialized(ServletContextEvent)
      */
     public void contextInitialized(ServletContextEvent arg0) {
-    	ctx = new ClassPathXmlApplicationContext("classpath:/spring-config.xml");
+    	ctx = new ClassPathXmlApplicationContext("spring-config.xml");
     	if (ctx != null) {
     		service = (IService) ctx.getBean("service");
     	}

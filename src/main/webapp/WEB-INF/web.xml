@@ -11,6 +11,12 @@
         <servlet-name>Test</servlet-name>
         <url-pattern>/test</url-pattern>
     </servlet-mapping>
+
+    <listener>
+    <listener-class>by.undead.BookContextListener</listener-class>
+    </listener>
+
+
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>

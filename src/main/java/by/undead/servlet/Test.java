@@ -3,6 +3,7 @@ package by.undead.servlet;
 import by.undead.BookContextListener;
 import by.undead.entity.Book;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,8 +19,14 @@ import java.io.IOException;
  */
 public class Test extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        response.setContentType("text/html; charset=UTF-8");
+        response.setCharacterEncoding("UTF-8");
+
+        String url = "WEB-INF/test.jsp";
+
         Book book = new Book();
-        book.setTitle("Золотая рыбка");
+        book.setTitle("asdasdЗолотая рыбка");
         book.setAuthor("Пушкин");
         BookContextListener.getService().createBook(book);
 
@@ -28,6 +35,8 @@ public class Test extends HttpServlet {
         book = BookContextListener.getService().getBook(id);
 
         request.setAttribute("book", book);
+
+        request.getRequestDispatcher(url).forward(request, response);
 
     }
 
